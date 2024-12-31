@@ -1,12 +1,15 @@
 import * as fs from 'node:fs/promises';
 import path from 'node:path';
 import day from 'dayjs';
+import cors from 'cors';
 
 import express from 'express';
+import routes from './routes/index.js';
 
 const app = express();
+app.use(routes);
 
-const bagsPath = path.resolve('db', 'bags.json');
+app.use(cors());
 
 app.use(async (req, res, next) => {
     const { method, url } = req;
@@ -17,13 +20,6 @@ app.use(async (req, res, next) => {
 
 app.get('/', (req, res) => {
     res.send('Done');
-});
-
-app.get('/catalog', async (req, res) => {
-    const data = await fs.readFile(bagsPath, { encoding: 'utf-8' });
-    const arrBags = JSON.parse(data);
-
-    res.send(arrBags);
 });
 
 app.listen(8080, () => {
