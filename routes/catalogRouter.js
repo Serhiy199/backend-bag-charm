@@ -12,7 +12,10 @@ catalogRouter.get('/', async (req, res) => {
     res.send(arrBags);
 });
 
-catalogRouter.post('/', async (req, res) => {
+catalogRouter.post('/:catalogId', async (req, res) => {
+    const { catalogId } = req.params;
+    console.log(catalogId);
+
     res.send('POST catalog');
 });
 
