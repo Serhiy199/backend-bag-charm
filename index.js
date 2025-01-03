@@ -7,8 +7,6 @@ import express from 'express';
 import routes from './routes/index.js';
 
 const app = express();
-app.use(routes);
-
 app.use(cors());
 
 app.use(async (req, res, next) => {
@@ -18,8 +16,10 @@ app.use(async (req, res, next) => {
     next();
 });
 
-app.get('/', (req, res) => {
-    res.send('Done');
+app.use('/api', routes);
+
+app.use((_, res) => {
+    res.status(404).json({ message: 'Route not found' });
 });
 
 app.listen(8080, () => {

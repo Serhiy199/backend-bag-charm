@@ -1,6 +1,6 @@
 import express from 'express';
-import catalogRouter from './catalogRouter.js';
-import handBagsRouter from './handBagsRouter.js';
+import catalogRouter from './api/catalogRouter.js';
+import handBagsRouter from './api/handBagsRouter.js';
 
 const routes = express.Router();
 
