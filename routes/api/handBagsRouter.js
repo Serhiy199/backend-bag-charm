@@ -12,20 +12,20 @@ handBagsRouter.get('/', async (req, res) => {
     res.send(arrBags);
 });
 
-handBagsRouter.post('/', async (req, res) => {
-    res.send('POST handBags');
-});
+// handBagsRouter.post('/', async (req, res) => {
+//     res.send('POST handBags');
+// });
 
-handBagsRouter.put('/', async (req, res) => {
-    res.send('PUT handBags');
-});
+// handBagsRouter.put('/', async (req, res) => {
+//     res.send('PUT handBags');
+// });
 
-handBagsRouter.delete('/', async (req, res) => {
-    res.send('DELETE handBags');
-});
+// handBagsRouter.delete('/', async (req, res) => {
+//     res.send('DELETE handBags');
+// });
 
-handBagsRouter.patch('/', async (req, res) => {
-    res.send('PATCH handBags');
-});
+// handBagsRouter.patch('/', async (req, res) => {
+//     res.send('PATCH handBags');
+// });
 
 export default handBagsRouter;
